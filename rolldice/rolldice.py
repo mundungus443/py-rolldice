@@ -812,7 +812,7 @@ def roll_dice(roll, *, functions=True, floats=True):
                 num_to_drop = int(drop[3] if drop[3] != '' else 1)
                 assert 1 <= num_to_drop < len(group_result)
 
-                results.append(sum(group_result[:num_to_drop]))
+                results.append(sum(group_result[num_to_drop:]))
                 roll = ','.join([str(i) for i in group_result[num_to_drop:]]) + ' ~~ '  # Same as above.
                 roll += ','.join([str(i) for i in group_result[:num_to_drop]])
                 string.append('[%s]' % roll)
